@@ -40,7 +40,7 @@ func quickSort(x []int) []int {
 	left, right := 0, len(x) -1
 	x[mid], x[right] = x[right], x[mid]
 
-	for i:=0; i< mid; i++ {
+	for i:=0; i< len(x); i++ {
 		if x[i] < x[right] {
 			x[left], x[i] = x[i], x[left]
 			left++
