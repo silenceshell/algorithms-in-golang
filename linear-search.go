@@ -1,8 +1,8 @@
 package main
 
 import (
-	"math/rand"
 	"fmt"
+	"math/rand"
 	"time"
 )
 
@@ -25,7 +25,7 @@ func main() {
 func generateSlice(size int) []int {
 	x := make([]int, size, size)
 	rand.Seed(time.Now().UnixNano())
-	for i:=0; i< len(x); i++ {
+	for i := 0; i < len(x); i++ {
 		x[i] = rand.Intn(999) - rand.Intn(999)
 	}
 	return x
@@ -33,7 +33,7 @@ func generateSlice(size int) []int {
 
 func linearSearch(items []int, target int) (int, error) {
 	//var index int
-	for index := range(items) {
+	for index := range items {
 		if items[index] == target {
 			return index, nil
 		}

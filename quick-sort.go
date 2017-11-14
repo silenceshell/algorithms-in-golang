@@ -1,9 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"math/rand"
 	"time"
-	"fmt"
 )
 
 func main() {
@@ -24,7 +24,7 @@ func main() {
 func generateSlice(size int) []int {
 	x := make([]int, size, size)
 	rand.Seed(time.Now().UnixNano())
-	for i:=0; i< len(x); i++ {
+	for i := 0; i < len(x); i++ {
 		x[i] = rand.Intn(999) - rand.Intn(999)
 	}
 	return x
@@ -37,10 +37,10 @@ func quickSort(x []int) []int {
 	rand.Seed(time.Now().UnixNano())
 	mid := rand.Intn(len(x))
 
-	left, right := 0, len(x) -1
+	left, right := 0, len(x)-1
 	x[mid], x[right] = x[right], x[mid]
 
-	for i:=0; i< len(x); i++ {
+	for i := 0; i < len(x); i++ {
 		if x[i] < x[right] {
 			x[left], x[i] = x[i], x[left]
 			left++
