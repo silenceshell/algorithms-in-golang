@@ -4,10 +4,11 @@ import (
 	"fmt"
 	"math/rand"
 	"time"
+	"github.com/silenceshell/algorithms-in-golang/utils"
 )
 
 func main() {
-	var x []int = generateSlice(13)
+	var x []int = utils.GenerateSlice(13)
 
 	for _, v := range x {
 		fmt.Println(v)
@@ -19,15 +20,6 @@ func main() {
 	for _, v := range x {
 		fmt.Println(v)
 	}
-}
-
-func generateSlice(size int) []int {
-	x := make([]int, size, size)
-	rand.Seed(time.Now().UnixNano())
-	for i := 0; i < len(x); i++ {
-		x[i] = rand.Intn(999) - rand.Intn(999)
-	}
-	return x
 }
 
 func quickSort(x []int) []int {

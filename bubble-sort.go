@@ -1,26 +1,16 @@
 package main
 
 import (
-	"time"
-	"math/rand"
 	"fmt"
+	"github.com/silenceshell/algorithms-in-golang/utils"
 )
 
 func main() {
-	x := generateSlice(13)
+	x := utils.GenerateSlice(13)
 	fmt.Println(x)
 
 	bubbleSort(x)
 	fmt.Println(x)
-}
-
-func generateSlice(size int) []int {
-	x := make([]int, size, size)
-	rand.Seed(time.Now().UnixNano())
-	for i := 0; i < len(x); i++ {
-		x[i] = rand.Intn(999) - rand.Intn(999)
-	}
-	return x
 }
 
 func bubbleSort(x []int) {
