@@ -8,12 +8,10 @@ import (
 
 func main() {
 	x := generateSlice(13)
-	bubbleSort(x)
+	fmt.Println(x)
 
-	for _, v := range x {
-		fmt.Printf("%d ", v)
-	}
-	fmt.Println()
+	bubbleSort(x)
+	fmt.Println(x)
 }
 
 func generateSlice(size int) []int {
@@ -27,10 +25,16 @@ func generateSlice(size int) []int {
 
 func bubbleSort(x []int) {
 	for i:=0; i < len(x); i++ {
+		swapped := false
 		for j := i + 1; j < len(x); j++ {
 			if x[j] < x[i] {
 				x[i], x[j] = x[j], x[i]
+				swapped = true
 			}
+		}
+		// this is a nice skill, will skip all the work left if they are already sorted.
+		if !swapped {
+			break
 		}
 	}
 	return
