@@ -11,6 +11,21 @@ func main() {
 
 	pancakeSort(x)
 	fmt.Println(x)
+
+	var x2 data = utils.GenerateSliceInt32(13)//data{12, 23, -12, 111, 444, 1234, 1111, -99}
+	fmt.Println(x2)
+	x2.pancakeSort()
+	fmt.Println(x2)
+}
+
+// just for oo.
+type data []int32
+func (x data) pancakeSort() {
+	pancakeSort(x)
+}
+
+func (x data) flip(n int) {
+	flip(x, n)
 }
 
 func pancakeSort(x []int32) {
