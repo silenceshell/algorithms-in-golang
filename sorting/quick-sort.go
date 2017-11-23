@@ -10,16 +10,12 @@ import (
 func main() {
 	var x []int = utils.GenerateSlice(13)
 
-	for _, v := range x {
-		fmt.Println(v)
-	}
+	fmt.Println(x)
 
 	fmt.Println("==========")
-	quickSort(x)
 
-	for _, v := range x {
-		fmt.Println(v)
-	}
+	quickSort(x)
+	fmt.Println(x)
 }
 
 func quickSort(x []int) []int {
