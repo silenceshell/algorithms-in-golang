@@ -17,6 +17,6 @@ index:
 - [11 - radix sort](https://github.com/silenceshell/algorithms-in-golang/blob/master/sorting/radix-sort.go)
 - [12 - pancake sort](https://github.com/silenceshell/algorithms-in-golang/blob/master/sorting/pancake-sort.go)
 - [13 - binary tree](https://github.com/silenceshell/algorithms-in-golang/blob/master/data-structure/sorted-binary-tree.go)
-- 14 - linked list
+- [14 - linked list](https://github.com/silenceshell/algorithms-in-golang/blob/master/data-structure/linked-list.go)
 - [15 - rabin-karp search](https://github.com/silenceshell/algorithms-in-golang/blob/master/searching/rabin-karp.go)
 
