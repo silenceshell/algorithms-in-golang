@@ -20,4 +20,4 @@ index:
 - [14 - rabin-karp search](https://github.com/silenceshell/algorithms-in-golang/blob/master/searching/rabin-karp.go)
 - [15 - linked list](https://github.com/silenceshell/algorithms-in-golang/blob/master/data-structure/linked-list.go)
 - [16 - LIFO stack and FIFO queue](https://github.com/silenceshell/algorithms-in-golang/blob/master/data-structure/stack-queue.go)
-- [17 - median of medians]
+- [17 - median of medians](https://github.com/silenceshell/algorithms-in-golang/blob/master/searching/median-of-medians.go)

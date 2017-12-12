@@ -14,7 +14,7 @@ func main() {
 	fmt.Println(newSlice)
 
 	for _, j := range []int{5, 10, 15, 20} {
-		// find the jth smallest item in intSlice.
+		// search the jth smallest item in intSlice.
 		i := medianOfMedians(intSlice, j, 5)
 		fmt.Println(j, "smallest element = ", i)
 		v := newSlice[j-1]
