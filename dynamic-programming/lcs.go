@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"bytes"
+	"fmt"
 )
 
 // Longest Common Subsequence
@@ -22,10 +22,10 @@ func lcs1(str1, str2 string) string {
 
 	var anchor int
 	var sum int
-	for i:=0; i< len1; i++ {
-		for j:=anchor; j<len2; j++ {
+	for i := 0; i < len1; i++ {
+		for j := anchor; j < len2; j++ {
 			if str1[i] == str2[j] {
-				anchor = j+1
+				anchor = j + 1
 				sum++
 				result.WriteByte(str1[i])
 				break
