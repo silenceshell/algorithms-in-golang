@@ -14,7 +14,7 @@ func main() {
 }
 
 func bubbleSort(x []int) {
-	for i:=0; i < len(x); i++ {
+	for i := 0; i < len(x); i++ {
 		swapped := false
 		for j := i + 1; j < len(x); j++ {
 			if x[j] < x[i] {

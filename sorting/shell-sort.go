@@ -60,7 +60,7 @@ func advanceShellSort(x []int) {
 		i++
 	}
 
-	for index := 0; index <= len(gaps) - 1; index++ {
+	for index := 0; index <= len(gaps)-1; index++ {
 		inc := gaps[index]
 		for i := inc; i < len(x); i++ {
 			j := i

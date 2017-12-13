@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/silenceshell/algorithms-in-golang/utils"
 	"fmt"
+	"github.com/silenceshell/algorithms-in-golang/utils"
 )
 
 func main() {
@@ -15,7 +15,7 @@ func main() {
 
 func mergeSort(x []int) []int {
 	var (
-		left []int
+		left  []int
 		right []int
 	)
 	if len(x) == 1 {
@@ -34,7 +34,7 @@ func merge(a []int, b []int) []int {
 	var tmp []int = []int{}
 
 	i, j := 0, 0
-	for ; i < len(a) && j < len(b); {
+	for i < len(a) && j < len(b) {
 		if a[i] < b[j] {
 			tmp = append(tmp, a[i])
 			i++

@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
+	"github.com/silenceshell/algorithms-in-golang/utils"
 	"math/rand"
 	"time"
-	"github.com/silenceshell/algorithms-in-golang/utils"
 )
 
 func main() {

@@ -6,16 +6,16 @@ import "fmt"
 type Node struct {
 	next *Node
 	prev *Node
-	key interface{}
+	key  interface{}
 }
 
-type List struct{
+type List struct {
 	head *Node
 	tail *Node
 }
 
-func (list * List) insert(key interface{}) {
-	node := &Node{next:list.head, prev:nil, key:key}
+func (list *List) insert(key interface{}) {
+	node := &Node{next: list.head, prev: nil, key: key}
 	if list.head != nil {
 		list.head.prev = node
 	}

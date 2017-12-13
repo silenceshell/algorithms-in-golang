@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/silenceshell/algorithms-in-golang/utils"
 	"fmt"
+	"github.com/silenceshell/algorithms-in-golang/utils"
 )
 
 func main() {
@@ -16,24 +16,24 @@ func main() {
 func heapSort(x []int) {
 	length := len(x)
 
-	for m := length/2; m >=0; m-- {
-		heap(x, m, length - 1)
+	for m := length / 2; m >= 0; m-- {
+		heap(x, m, length-1)
 	}
 	fmt.Println(x)
 
-	for i:=length - 1; i > 0; i-- {
+	for i := length - 1; i > 0; i-- {
 		x[i], x[0] = x[0], x[i]
 		heap(x, 0, i-1)
 	}
 }
 
 func heap(x []int, root, end int) {
-	left := 2 * root + 1
+	left := 2*root + 1
 	if left > end {
 		return
 	}
 
-	right := 2 * root + 2
+	right := 2*root + 2
 	if right < end && x[left] < x[right] {
 		left = right
 	}

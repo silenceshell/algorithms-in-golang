@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
 	"github.com/silenceshell/algorithms-in-golang/utils"
+	"math/rand"
 )
 
 func main() {

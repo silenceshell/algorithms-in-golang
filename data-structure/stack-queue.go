@@ -11,13 +11,13 @@ type Stack struct {
 }
 
 type Node struct {
-	next *Node
-	prev *Node
+	next  *Node
+	prev  *Node
 	value interface{}
 }
 
-func (stack *Stack) Push(value interface {}) {
-	node := &Node{next:stack.head, value:value}
+func (stack *Stack) Push(value interface{}) {
+	node := &Node{next: stack.head, value: value}
 	stack.head = node
 }
 
@@ -51,7 +51,7 @@ type Queue struct {
 }
 
 func (queue *Queue) Push(value interface{}) {
-	var node *Node = &Node{next:queue.head, prev:nil, value:value}
+	var node *Node = &Node{next: queue.head, prev: nil, value: value}
 	if queue.head != nil {
 		queue.head.prev = node
 	}
@@ -95,7 +95,7 @@ func main() {
 
 	var stack Stack = Stack{}
 
-	for i:=0; i < 10; i++ {
+	for i := 0; i < 10; i++ {
 		stack.Push(rand.Intn(999) - rand.Intn(999))
 	}
 	stack.Display()
@@ -106,7 +106,7 @@ func main() {
 
 	var queue Queue = Queue{}
 
-	for i:=0; i < 10; i++ {
+	for i := 0; i < 10; i++ {
 		queue.Push(rand.Intn(999) - rand.Intn(999))
 	}
 	queue.Display()

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/silenceshell/algorithms-in-golang/utils"
 	"fmt"
+	"github.com/silenceshell/algorithms-in-golang/utils"
 )
 
 func main() {
@@ -15,7 +15,7 @@ func main() {
 
 func insertionSort(x []int) {
 	for i := 1; i < len(x); i++ {
-		for j := i-1; j >= 0; j-- {
+		for j := i - 1; j >= 0; j-- {
 			if x[j] > x[j+1] {
 				x[j], x[j+1] = x[j+1], x[j]
 			}

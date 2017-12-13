@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/silenceshell/algorithms-in-golang/utils"
 	"fmt"
+	"github.com/silenceshell/algorithms-in-golang/utils"
 )
 
 func main() {
@@ -18,7 +18,7 @@ func combSort(x []int) {
 		length int = len(x)
 	)
 	for comb := length; comb >= 1; comb-- {
-		for i := 0; i < length - comb; i++ {
+		for i := 0; i < length-comb; i++ {
 			if x[i] > x[i+comb] {
 				x[i], x[i+comb] = x[i+comb], x[i]
 			}

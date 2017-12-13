@@ -1,8 +1,8 @@
 package utils
 
 import (
-	"time"
 	"math/rand"
+	"time"
 )
 
 func GenerateSlice(size int) []int {
@@ -13,7 +13,6 @@ func GenerateSlice(size int) []int {
 	}
 	return x
 }
-
 
 func GenerateSliceInt32(size int) []int32 {
 	x := make([]int32, size, size)

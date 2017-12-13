@@ -1,10 +1,10 @@
 package main
 
 import (
-	"fmt"
-	"github.com/silenceshell/algorithms-in-golang/utils"
 	"bytes"
 	"encoding/binary"
+	"fmt"
+	"github.com/silenceshell/algorithms-in-golang/utils"
 	"os"
 )
 
@@ -15,34 +15,36 @@ func main() {
 	radixSort(x)
 	fmt.Println(x)
 }
+
 const digit int = 4
 const maxbit = -1 << 31
+
 func radixSort(x []int32) {
 	buf := bytes.NewBuffer(nil)
-    asBytesArray := make([][]byte, len(x))
+	asBytesArray := make([][]byte, len(x))
 	var (
 		err error
-		n int
+		n   int
 	)
-    for i, e := range x {
-        err = binary.Write(buf, binary.LittleEndian, e^maxbit)
+	for i, e := range x {
+		err = binary.Write(buf, binary.LittleEndian, e^maxbit)
 		if err != nil {
 			fmt.Printf("write error, %v", err)
 			os.Exit(-1)
 		}
 
-        asBytes := make([]byte, digit)
-        _, err = buf.Read(asBytes)
+		asBytes := make([]byte, digit)
+		_, err = buf.Read(asBytes)
 		if err != nil {
 			fmt.Printf("read error, err %v, n %v", err, n)
 			os.Exit(-1)
 		}
-        asBytesArray[i] = asBytes
-    }
+		asBytesArray[i] = asBytes
+	}
 
 	var length int
 	buckets := make([][][]byte, 256)
-	for i:=0; i<digit; i++ {
+	for i := 0; i < digit; i++ {
 		for _, v := range asBytesArray {
 			buckets[v[i]] = append(buckets[v[i]], v)
 		}
@@ -65,6 +67,6 @@ func radixSort(x []int32) {
 			fmt.Printf("read error, err %v", err)
 			os.Exit(-1)
 		}
-		x[i] = w^maxbit
+		x[i] = w ^ maxbit
 	}
 }

@@ -6,9 +6,9 @@ import (
 )
 
 type SortedBinaryNode struct {
-	left *SortedBinaryNode
+	left  *SortedBinaryNode
 	right *SortedBinaryNode
-	data int
+	data  int
 }
 
 type SortedBinaryTree struct {
@@ -17,7 +17,7 @@ type SortedBinaryTree struct {
 
 func (tree *SortedBinaryTree) insert(num int) *SortedBinaryTree {
 	if tree.root == nil {
-		tree.root = &SortedBinaryNode{left:nil, right:nil, data:num}
+		tree.root = &SortedBinaryNode{left: nil, right: nil, data: num}
 	} else {
 		tree.root.insert(num)
 	}
@@ -30,13 +30,13 @@ func (node *SortedBinaryNode) insert(num int) error {
 	}
 	if num <= node.data {
 		if node.left == nil {
-			node.left = &SortedBinaryNode{left:nil, right:nil, data:num}
+			node.left = &SortedBinaryNode{left: nil, right: nil, data: num}
 		} else {
 			node.left.insert(num)
 		}
 	} else {
 		if node.right == nil {
-			node.right = &SortedBinaryNode{left:nil, right:nil, data:num}
+			node.right = &SortedBinaryNode{left: nil, right: nil, data: num}
 		} else {
 			node.right.insert(num)
 		}
