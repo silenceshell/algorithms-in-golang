@@ -21,5 +21,5 @@ index:
 - [15 - linked list](https://github.com/silenceshell/algorithms-in-golang/blob/master/data-structure/linked-list.go)
 - [16 - LIFO stack and FIFO queue](https://github.com/silenceshell/algorithms-in-golang/blob/master/data-structure/stack-queue.go)
 - [17 - median of medians](https://github.com/silenceshell/algorithms-in-golang/blob/master/searching/median-of-medians.go)
-- [18 - Longest Common Sub-sequence](https://github.com/silenceshell/algorithms-in-golang/tree/master/dynamic-programming/lcs.go)
+- [18 - Longest Common Sub-sequence](https://github.com/silenceshell/algorithms-in-golang/tree/master/dynamic-programming/longest-common-subsequence.go)
 - [19 - Levenshtein distance](https://github.com/silenceshell/algorithms-in-golang/tree/master/dynamic-programming/levenshtein-distance.go)

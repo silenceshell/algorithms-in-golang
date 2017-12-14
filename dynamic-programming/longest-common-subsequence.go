@@ -10,11 +10,11 @@ func main() {
 	var str1 string = "ABCDGHOOxx"
 	var str2 string = "AEDFHRxOxz"
 
-	length := lcs1(str1, str2)
-	fmt.Println(length)
+	subSequence := lcs1(str1, str2)
+	fmt.Println(subSequence)
 
-	l, s := lcs2(str1, str2)
-	fmt.Println(l, s)
+	length := lcs2(str1, str2)
+	fmt.Println(length)
 }
 
 // a basic solution
@@ -39,10 +39,9 @@ func lcs1(str1, str2 string) string {
 	return result.String()
 }
 
-func lcs2(str1, str2 string) (string, int) {
+func lcs2(str1, str2 string) (int) {
 	len1 := len(str1)
 	len2 := len(str2)
-	var result bytes.Buffer
 
 	var len [][]int = make([][]int, len1)
 	for i := range len {
@@ -53,8 +52,7 @@ func lcs2(str1, str2 string) (string, int) {
 		for j := 0; j < len2; j++ {
 			if i == 0 || j == 0 {
 				len[i][j] = 0
-			} else if str1[i] == str2[j] {
-				result.WriteByte(str1[i])
+			} else if str1[i-1] == str2[j-1] {
 				len[i][j] = len[i-1][j-1] + 1
 			} else {
 				len[i][j] = max(len[i-1][j], len[i][j-1])
@@ -62,7 +60,7 @@ func lcs2(str1, str2 string) (string, int) {
 		}
 	}
 
-	return result.String(), len[len1-1][len2-1]
+	return len[len1-1][len2-1]
 }
 
 func max(a, b int) int {
