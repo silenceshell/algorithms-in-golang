@@ -42,6 +42,8 @@ func lcs1(str1, str2 string) string {
 func lcs2(str1, str2 string) (int) {
 	len1 := len(str1)
 	len2 := len(str2)
+	var result bytes.Buffer
+	var lasti, lastj int
 
 	var len [][]int = make([][]int, len1)
 	for i := range len {
@@ -54,12 +56,18 @@ func lcs2(str1, str2 string) (int) {
 				len[i][j] = 0
 			} else if str1[i-1] == str2[j-1] {
 				len[i][j] = len[i-1][j-1] + 1
+				if lasti != i && lastj != j {
+					result.WriteByte(str1[i-1])
+					lasti = i
+					lastj = j
+				}
 			} else {
 				len[i][j] = max(len[i-1][j], len[i][j-1])
 			}
 		}
 	}
 
+	fmt.Println(result.String())
 	return len[len1-1][len2-1]
 }
 
