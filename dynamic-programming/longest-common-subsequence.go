@@ -11,10 +11,10 @@ func main() {
 	var str2 string = "AEDFHRxOxz"
 
 	subSequence := lcs1(str1, str2)
-	fmt.Println(subSequence)
+	fmt.Printf("sub sequence is %s\r\n", subSequence)
 
-	length := lcs2(str1, str2)
-	fmt.Println(length)
+	subSequence2, length := lcs2(str1, str2)
+	fmt.Printf("sub sequence is %s, lenth is  %d\r\n", subSequence2, length)
 }
 
 // a basic solution
@@ -39,7 +39,7 @@ func lcs1(str1, str2 string) string {
 	return result.String()
 }
 
-func lcs2(str1, str2 string) (int) {
+func lcs2(str1, str2 string) (string, int) {
 	len1 := len(str1)
 	len2 := len(str2)
 	var result bytes.Buffer
@@ -67,8 +67,7 @@ func lcs2(str1, str2 string) (int) {
 		}
 	}
 
-	fmt.Println(result.String())
-	return len[len1-1][len2-1]
+	return result.String(), len[len1-1][len2-1]
 }
 
 func max(a, b int) int {
