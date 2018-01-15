@@ -25,10 +25,10 @@ func KMPNew(haystack string, needle string) []int {
 	for i < lenH {
 		count++
 		if haystack[i] != needle[j] {
-			i -= next[j]
-			j = 0
-			//i++
-			//j = next[j]
+			j = next[j]
+			if j == 0 {
+				i++
+			}
 		} else {
 			i++
 			j++
@@ -49,7 +49,7 @@ func preKMPNew(x string) []int {
 	var j int = 0
 	var length int = len(x)
 	var next []int = make([]int, length)
-	next[0] = -1
+	next[0] = 0
 
 	for i < length {
 		if x[i] == x[j] {
@@ -91,6 +91,7 @@ func KMP(haystack string, needle string) []int {
 	for j < n {
 		count++
 		for i > -1 && x[i] != y[j] {
+			count++
 			i = next[i]
 		}
 		i++
@@ -165,11 +166,12 @@ func main() {
 	fmt.Println(KMP("cocacola", "cx"))
 	fmt.Println(KMP("AABAACAADAABAABAAABAACAADAABAABA", "AABA"))
 
-	fmt.Println("Search First Position String(new):")
+	fmt.Println("\nSearch First Position String(new):")
 	fmt.Println(KMPNew("cocacola", "ABCDABD"))
 	fmt.Println(KMPNew("Australia", "lia"))
 	fmt.Println(KMPNew("cocacola", "cx"))
 	fmt.Println(KMPNew("AABAACAADAABAABA", "AABA"))
+	//fmt.Println(KMPNew("ABC ABCDAB ABCDABCDABDE", "ABCDABD"))
 
 	fmt.Println("\nSearch Last Position String(new):")
 	fmt.Println(KMPNew("cocacola", "co"))
