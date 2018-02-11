@@ -13,22 +13,18 @@ func main() {
 }
 
 func removeDuplicates(nums []int) int {
-	if len(nums) == 0 {
-		return 0
+	l := len(nums)
+	if l < 1 {
+		return l
 	}
-	if len(nums) == 1 {
-		return 1
-	}
-	var index int = 1
-	var last int = nums[0]
-	for i := 1; i < len(nums); i++ {
-		if nums[i] != last {
-			nums[index] = nums[i]
+	var index int = 0
+	for i := 1; i < l; i++ {
+		if nums[index] != nums[i] {
 			index++
+			nums[index] = nums[i]
 		}
-		last = nums[i]
 	}
-	return index
+	return index+1
 }
 
 func removeDuplicatesForNoSortedArray(nums []int) int {
