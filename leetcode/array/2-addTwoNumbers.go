@@ -78,13 +78,8 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 		}
 
 		n := new(ListNode)
-		if v >= 10 {
-			n.Val = v - 10
-			up = 1
-		} else {
-			n.Val = v
-			up = 0
-		}
+		n.Val = v%10
+		up = v/10
 
 		if x == 0 {
 			result = n
