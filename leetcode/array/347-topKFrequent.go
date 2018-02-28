@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 	var x []int = []int{1, 1, 1, 2, 2, 3}
 	fmt.Println(topKFrequent(x, 2))
-	
+
 	x = []int{3, 0, 1, 0}
 	fmt.Println(topKFrequent(x, 1))
 
