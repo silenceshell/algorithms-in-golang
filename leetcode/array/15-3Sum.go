@@ -33,12 +33,10 @@ func threeSum(nums []int) [][]int {
 		v := nums[i]
 		results := twoSum2(nums[i+1:], -v)
 		for _, result := range results {
-			if result != nil {
-				result = append(result, v)
-				sortResult(result)
-				if !resultInRet(result, ret) {
-					ret = append(ret, result)
-				}
+			result = append(result, v)
+			sortResult(result)
+			if !resultInRet(result, ret) {
+				ret = append(ret, result)
 			}
 		}
 	}
