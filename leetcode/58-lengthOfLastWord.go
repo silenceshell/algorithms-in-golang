@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func lengthOfLastWord(s string) int {
+func lengthOfLastWordDP(s string) int {
     var l int = 0
     var ls = len(s)
     if ls == 0 {
@@ -29,6 +29,19 @@ func lengthOfLastWord(s string) int {
         }
     }
     return 0
+}
+
+func lengthOfLastWord(s string) int {
+    var ls = len(s)
+    var cnt = 0
+    for i:=ls-1; i>=0; i-- {
+        if s[i] != 32 {
+            cnt++
+        } else if cnt != 0 {
+            return cnt
+        }
+    }
+    return cnt
 }
 
 func main() {
